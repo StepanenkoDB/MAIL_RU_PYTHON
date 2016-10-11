@@ -20,17 +20,17 @@ class WSGI:
 		self.start = start_response
 
 	def __iter__(self):
-		for i in global_event:
-			if i != None:
-				status = '200 OK'
-				response_headers = [('Content-type', 'text/plain')]
-				self.start(status, response_headers)
-				yield i
-			else:
-				status = '404 No Content'
-				response_headers = [('Content-type', 'text/plain')]
-				self.start(status, response_headers)
-				yield "Failure\n"
+		tmp = global_event.next()
+		if tmp != None:
+			status = '200 OK'
+			response_headers = [('Content-type', 'text/plain')]
+			self.start(status, response_headers)
+			yield tmp
+		else:
+			status = '204 No Content'
+			response_headers = [('Content-type', 'text/plain')]
+			self.start(status, response_headers)
+			yield "Failure\n"
 
 
 if __name__ == '__main__':
