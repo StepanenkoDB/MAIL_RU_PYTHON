@@ -1,0 +1,51 @@
+body {
+	/*background-color: #999;*/
+}
+
+header {
+	position: absolute;
+	float: left;
+	margin-left: 25px;
+}
+
+.charges_list {
+	width: 40%;
+	margin-top: 50px;
+}
+
+.charges_list th,td {
+	width: 200px;
+	text-align: center;
+}
+
+.income {
+	float: left;
+	margin-left: 5%;
+}
+
+.outcome {
+	float: right;
+	margin-right: 5%;
+}
+
+aside {
+	position: absolute;
+	margin-top: 50px;
+	margin-left: 25px;
+}
+
+ul.errorlist {
+	list-style-type: none;
+	text-align: center;
+	padding: 0;
+}
+
+ul.errorlist li {
+	text-align:center;
+	color: red;
+}
+
+header ul.nav li {
+	float: left;
+	margin-right: 19px;
+}

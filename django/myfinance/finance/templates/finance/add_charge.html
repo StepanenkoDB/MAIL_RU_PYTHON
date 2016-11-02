@@ -1,0 +1,32 @@
+{% extends 'finance/wrapper.html' %}
+{% load widget_tweaks %}
+
+{% block content %}
+	<header>
+	<a href="{% url 'post_all' %}">List of charges</a>
+	</header>
+	<aside>
+	<h3>New charge</h3>
+		<form method="POST" class="post-form">{% csrf_token %}
+			<div class="form-group">
+				{{ form.title|add_class:"form-control"|attr:"placeholder:Title" }}
+			</div>
+			<div class="form-group">
+				{{ form.amount.errors }}
+				{{ form.amount|add_class:"form-control"|attr:"placeholder:Amount" }}
+			</div>
+			<div class="form-group">
+				{{ form.date.errors }}
+				{{ form.date|add_class:"form-control" }}
+			</div>
+			<div class="form-group">
+				<label class="form-check-label">
+      			{{ form.sign|add_class:"form-check-input" }}
+      				Income
+    			</label>
+			</div>
+				<button type="submit" class="save btn btn-default btn-primary">Save</button>
+				<!--{{ info }}-->
+		</form>
+	</aside>
+{% endblock %}
